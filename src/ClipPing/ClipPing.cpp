@@ -68,17 +68,6 @@ struct AppState
 			SetFocus(GetDlgItem(hwnd, IDOK));
 			return FALSE;
 
-		case WM_NOTIFY:
-			{
-				const auto nmhdr = (NMHDR*)lParam;
-				if (nmhdr->idFrom == IDC_LNK_MANUAL && (nmhdr->code == NM_CLICK || nmhdr->code == NM_RETURN))
-				{
-					ShellExecute(hwnd, L"open", L"https://mp.weixin.qq.com/s/tQscI4aiR2uiqjiRfN8JCg", nullptr, nullptr, SW_SHOWNORMAL);
-					return TRUE;
-				}
-			}
-			break;
-
 		case WM_COMMAND:
 			if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL)
 			{

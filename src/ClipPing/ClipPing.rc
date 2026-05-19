@@ -78,7 +78,7 @@ BEGIN
     LTEXT           "Windows 剪贴板视觉通知工具", -1, 14, 42, 212, 8
     LTEXT           "汉化：科控物联  QQ:2492123056", -1, 14, 56, 212, 8
     LTEXT           "原作者：Kevin Gosse", -1, 14, 68, 212, 8
-    CONTROL         "使用手册", IDC_LNK_MANUAL, "SysLink", WS_TABSTOP, 14, 82, 50, 10
+    LTEXT           "使用手册：https://mp.weixin.qq.com/s/tQscI4aiR2uiqjiRfN8JCg", -1, 14, 82, 212, 8
     DEFPUSHBUTTON   "确定", IDOK, 95, 120, 50, 14
 END
 
