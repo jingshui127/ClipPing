@@ -57,7 +57,7 @@ struct AppState
 						if (VerQueryValue(buffer.get(), L"\\", (void**)&fileInfo, &len))
 						{
 							wchar_t version[64];
-							swprintf_s(version, L"Version %d.%d",
+							swprintf_s(version, L"版本 %d.%d",
 								HIWORD(fileInfo->dwProductVersionMS),
 								LOWORD(fileInfo->dwProductVersionMS));
 							SetDlgItemText(hwnd, IDC_VERSION, version);
@@ -67,19 +67,6 @@ struct AppState
 			}
 			SetFocus(GetDlgItem(hwnd, IDOK));
 			return FALSE;
-
-		case WM_NOTIFY:
-			{
-				const auto nmhdr = (NMHDR*)lParam;
-				if ((nmhdr->idFrom == IDC_LNK_TWITTER || nmhdr->idFrom == IDC_LNK_GITHUB)
-					&& (nmhdr->code == NM_CLICK || nmhdr->code == NM_RETURN))
-				{
-					const auto link = (NMLINK*)lParam;
-					ShellExecute(hwnd, L"open", link->item.szUrl, nullptr, nullptr, SW_SHOWNORMAL);
-					return TRUE;
-				}
-			}
-			break;
 
 		case WM_COMMAND:
 			if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL)
@@ -96,10 +83,10 @@ struct AppState
 	static void ShowTrayMenu(HWND hwnd)
 	{
 		const auto menu = CreatePopupMenu();
-		AppendMenu(menu, MF_STRING, IDM_SETTINGS, L"Settings...");
-		AppendMenu(menu, MF_STRING, IDM_ABOUT, L"About...");
+		AppendMenu(menu, MF_STRING, IDM_SETTINGS, L"设置...");
+		AppendMenu(menu, MF_STRING, IDM_ABOUT, L"关于...");
 		AppendMenu(menu, MF_SEPARATOR, 0, nullptr);
-		AppendMenu(menu, MF_STRING, IDM_EXIT, L"Exit");
+		AppendMenu(menu, MF_STRING, IDM_EXIT, L"退出");
 
 		SetForegroundWindow(hwnd);
 
@@ -120,7 +107,7 @@ struct AppState
 		nid.uID = 1;
 		nid.uFlags = NIF_ICON | NIF_MESSAGE | NIF_TIP;
 		nid.uCallbackMessage = WM_TRAYICON;
-		wcscpy_s(nid.szTip, L"ClipPing");
+		wcscpy_s(nid.szTip, L"ClipPing - 剪贴板通知");
 
 		nid.hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_CLIPPING));
 

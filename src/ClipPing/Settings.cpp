@@ -179,12 +179,12 @@ INT_PTR CALLBACK Settings::DlgProc(HWND dialog, UINT msg, WPARAM wParam, LPARAM 
 		ctx->settings->isFirstLaunch = false;
 
 		const auto hCombo = GetDlgItem(dialog, IDC_CMB_OVERLAY);
-		SendMessage(hCombo, CB_ADDSTRING, 0, (LPARAM)L"Top");
-		SendMessage(hCombo, CB_ADDSTRING, 0, (LPARAM)L"Border");
-		SendMessage(hCombo, CB_ADDSTRING, 0, (LPARAM)L"Aura");
-		SendMessage(hCombo, CB_ADDSTRING, 0, (LPARAM)L"Bottom");
-		SendMessage(hCombo, CB_ADDSTRING, 0, (LPARAM)L"Left");
-		SendMessage(hCombo, CB_ADDSTRING, 0, (LPARAM)L"Right");
+		SendMessage(hCombo, CB_ADDSTRING, 0, (LPARAM)L"顶部");
+		SendMessage(hCombo, CB_ADDSTRING, 0, (LPARAM)L"边框");
+		SendMessage(hCombo, CB_ADDSTRING, 0, (LPARAM)L"光晕");
+		SendMessage(hCombo, CB_ADDSTRING, 0, (LPARAM)L"底部");
+		SendMessage(hCombo, CB_ADDSTRING, 0, (LPARAM)L"左侧");
+		SendMessage(hCombo, CB_ADDSTRING, 0, (LPARAM)L"右侧");
 		SendMessage(hCombo, CB_SETCURSEL, (WPARAM)ctx->settings->overlayType, 0);
 
 		return TRUE;

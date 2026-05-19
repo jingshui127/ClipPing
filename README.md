@@ -1,72 +1,71 @@
 # <img width="48" height="48" alt="clipboard" src="https://github.com/user-attachments/assets/45f546a7-ed7b-4d29-838a-8f88bd693247" /> ClipPing
 
-
-Visual clipboard notification for Windows. ClipPing displays a brief overlay on your active window whenever the clipboard is updated, giving you instant visual feedback that your copy operation worked.
+Windows 剪贴板视觉通知工具。每当剪贴板内容更新时，ClipPing 会在当前活动窗口上显示一个短暂的覆盖层动画，给您即时的视觉反馈，确认复制操作已成功。
 
 https://github.com/user-attachments/assets/38db2a32-c694-41a0-b3d8-7532220ffee9
 
-## Installation
+## 安装方式
 
-### Winget (recommended)
+### Winget（推荐）
 
 ```
 winget install KevinGosse.ClipPing
 ```
 
-### Installer
+### 安装包
 
-Download `ClipPing-Setup.exe` from the [latest release](https://github.com/kevingosse/ClipPing/releases/latest).
+从[最新发布页](https://github.com/kevingosse/ClipPing/releases/latest)下载 `ClipPing-Setup.exe`。
 
-### Portable
+### 便携版
 
-Download `ClipPing.exe` from the [latest release](https://github.com/kevingosse/ClipPing/releases/latest) and run it directly. No installation required.
+从[最新发布页](https://github.com/kevingosse/ClipPing/releases/latest)下载 `ClipPing.exe` 直接运行，无需安装。
 
-## Usage
+## 使用方法
 
-ClipPing runs in the background with an icon in the system tray. Every time you copy something, a brief visual overlay flashes on your active window.
+ClipPing 在后台运行，系统托盘中会显示一个图标。每次复制内容时，当前活动窗口上会短暂闪烁一个视觉覆盖层。
 
-Right-click the tray icon to access:
-- **Settings** - Configure overlay appearance and behavior
-- **About** - Version and links
-- **Exit** - Close ClipPing
+右键点击托盘图标可访问：
+- **设置** - 配置覆盖层外观和行为
+- **关于** - 版本信息和链接
+- **退出** - 关闭 ClipPing
 
-Double-click the tray icon to open the settings dialog.
+双击托盘图标可直接打开设置对话框。
 
-## Overlay types
+## 覆盖层类型
 
-ClipPing comes with 6 overlay styles. You can pick the one you prefer and customize the color from the settings dialog.
+ClipPing 提供 6 种覆盖层样式。您可以在设置对话框中选择偏好的样式并自定义颜色。
 
-| Overlay | Description |
+| 覆盖层 | 说明 |
 |---------|-------------|
-| Top | Gradient bar at the top of the window (default) |
-| Bottom | Gradient bar at the bottom |
-| Left | Gradient bar on the left edge |
-| Right | Gradient bar on the right edge |
-| Border | Solid border around the entire window |
-| Aura | Glowing gradient on all edges |
+| 顶部 | 窗口顶部的渐变条（默认） |
+| 底部 | 窗口底部的渐变条 |
+| 左侧 | 窗口左侧的渐变条 |
+| 右侧 | 窗口右侧的渐变条 |
+| 边框 | 窗口四周的实线边框 |
+| 光晕 | 窗口四周的发光渐变效果 |
 
-<!-- TODO: Add screenshots of each overlay type -->
+## 设置选项
 
-## Settings
+- **覆盖层颜色** - 使用颜色选择器选取任意颜色
+- **覆盖层类型** - 从 6 种覆盖层样式中选择
+- **预览** - 应用前实时预览您的设置效果
+- **开机自启动** - 登录时自动启动 ClipPing
 
-<!-- TODO: Add screenshot of the settings dialog -->
+设置保存在 `%LOCALAPPDATA%\ClipPing\settings.ini`。
 
-- **Overlay color** - Pick any color using the color chooser
-- **Overlay type** - Select one of the 6 overlay styles
-- **Preview** - Preview your settings in real-time before applying
-- **Start with Windows** - Launch ClipPing automatically at login
+## 系统要求
 
-Settings are stored in `%LOCALAPPDATA%\ClipPing\settings.ini`.
+- Windows 10 版本 1607 或更高版本
+- x64 架构
 
-## Requirements
+## 从源码构建
 
-- Windows 10 version 1607 or later
-- x64
+在 Visual Studio 2025 中打开 `src/ClipPing.sln`，构建 Release/x64 配置。输出文件将放置在 `build/` 目录中。
 
-## Building from source
-
-Open `src/ClipPing.sln` in Visual Studio 2025 and build the Release/x64 configuration. The output is placed in the `build/` directory.
-
-## License
+## 许可证
 
 [MIT](LICENSE)
+
+---
+
+> 本仓库为 [ClipPing](https://github.com/kevingosse/ClipPing) 的汉化版本，由科控物联（QQ:2492123056）维护。
