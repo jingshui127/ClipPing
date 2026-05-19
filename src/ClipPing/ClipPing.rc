@@ -67,7 +67,7 @@ BEGIN
     DEFPUSHBUTTON   "确定", IDOK, 193, 205, 50, 14
 END
 
-IDD_ABOUT DIALOGEX 0, 0, 240, 145
+IDD_ABOUT DIALOGEX 0, 0, 240, 160
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "关于 ClipPing"
 FONT 9, "Microsoft YaHei"
@@ -78,6 +78,7 @@ BEGIN
     LTEXT           "Windows 剪贴板视觉通知工具", -1, 14, 42, 212, 8
     LTEXT           "汉化：科控物联  QQ:2492123056", -1, 14, 56, 212, 8
     LTEXT           "原作者：Kevin Gosse", -1, 14, 68, 212, 8
-    DEFPUSHBUTTON   "确定", IDOK, 95, 105, 50, 14
+    CONTROL         "使用手册", IDC_LNK_MANUAL, "SysLink", WS_TABSTOP, 14, 82, 50, 10
+    DEFPUSHBUTTON   "确定", IDOK, 95, 120, 50, 14
 END
 
